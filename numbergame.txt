@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-color: #AE8274;
+        }
+        #bilt{
+            text-align: center;
+            color: rgb(56, 64, 71);
+            font-family: Georgia, 'Times New Roman', Times, serif;
+        }
+        .container{
+            background-color: #C2B15C;
+            text-align: center;
+            margin: auto;
+            border: 4px solid rgb(99, 91, 67);
+            height: 272px;
+            width: 750px;
+        }
+        p{
+            color: white;
+            font-size: 23px;
+        }
+         </style>
+         <script>
+            let btn = document.getElementById('btn');
+            let output = document.getElementById('text');
+
+            let number = [Math.floor(Math.random() * 100)]
+
+            btn.addEventListener("click", function(){
+                let input = document.getElementById('inputtext').value;
+                if (input == number){
+                    output.innerHTML = "You guessed right, your number was ${number}"
+                } else if (input < number){
+                    output.innerHTML = "You guessed too low!"
+                };
+                if (input > number){
+                    output.innerHTML = "You guessed too high!"
+                }
+
+            });
+         </script>
+</head>
+<body>
+    <h1 id="bilt">Number Guess Game</h1>
+    <div class="container">
+        <p>Guess a number between 1-100 </p>
+        <p id="text">Enter a number below: </p>
+        <input type="text" id="inputtext">
+        <button id="btn">Enter</button>
+    </div>
+    
+</body>
+</html>
